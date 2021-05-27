@@ -42,6 +42,31 @@ class TestController extends Controller
     return redirect() -> route('home');
   }
 
+
+  //Modifica
+  public function edit($id) {
+    $employee = Employee::findOrFail($id);
+    return view('pages.edit', compact('employee'));
+  }
+
+  public function update(Request $request, $id) {
+    //dd($request -> all() ,  $id);
+    $validate = $request -> validate([
+      'firstname' => 'nullable|max:128',
+      'lastname' => 'nullable|max:128',
+      'role' => 'nullable|max:16',
+      'ral' => 'nullable|max:16',
+    ]);
+    //dd($validate, $id);
+    $employee = Employee::findOrFail($id);
+    $employee -> update($validate);
+    return redirect() -> route('home');
+  }
+
+
+
+
+  //destroid
   public function destroy($id) {
     //dd($id);
     $employee = Employee::findOrFail($id);
