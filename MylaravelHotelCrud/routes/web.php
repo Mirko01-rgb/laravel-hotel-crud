@@ -13,3 +13,6 @@ Route::get('/create', 'TestController@create')
 
 Route::post('/store', 'TestController@store')
       -> name('store');
+
+Route::get('destroy/{id}', 'TestController@destroy')
+      -> name('destroy');

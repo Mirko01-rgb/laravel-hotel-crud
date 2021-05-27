@@ -4,13 +4,19 @@
     <div class="row">
       <div class="col-12">
         <ul>
-          @foreach ($employee as $employee)
+          @foreach ($employees as $employee)
             <li>
               <h3>
-                <a href="{{ route('employee', $employee -> id) }}">   
+                <a href="{{ route('employee', $employee -> id) }}">
                   [{{ $employee -> id }}]
                   {{ $employee -> firstname }}
                   {{ $employee -> lastname }}
+                </a>
+                <a href="#">
+                  &#9998;
+                </a>
+                <a href="{{route('destroy', $employee -> id)}}">
+                  &#10060;
                 </a>
               </h3>
             </li>

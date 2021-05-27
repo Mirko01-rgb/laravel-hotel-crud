@@ -8,10 +8,10 @@ use App\Employee;
 class TestController extends Controller
 {
   public function home(){
-    $employee = Employee::all();
-    // dd($employee);
+    $employees = Employee::all();
+    // dd($employees);
 
-    return view('pages.home', compact('employee'));
+    return view('pages.home', compact('employees'));
   }
 
   public function employee($id) {
@@ -39,6 +39,13 @@ class TestController extends Controller
     $employee = Employee::create($validate);
     //dd($employee);
 
+    return redirect() -> route('home');
+  }
+
+  public function destroy($id) {
+    //dd($id);
+    $employee = Employee::findOrFail($id);
+    $employee -> delete();
     return redirect() -> route('home');
   }
 }
