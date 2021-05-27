@@ -6,3 +6,9 @@ body ul {
   list-style-type: none;
 }
 
+body ul a,
+body ul a:hover {
+  color: black;
+  text-decoration: none;
+}
+

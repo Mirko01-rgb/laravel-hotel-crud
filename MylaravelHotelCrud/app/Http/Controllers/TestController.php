@@ -13,4 +13,11 @@ class TestController extends Controller
 
     return view('pages.home', compact('employee'));
   }
+
+  public function employee($id) {
+    $employee = Employee::findOrFail($id);
+     // dd($id);
+    // dd($employee);
+    return view('pages.employee', compact('employee'));
+  }
 }

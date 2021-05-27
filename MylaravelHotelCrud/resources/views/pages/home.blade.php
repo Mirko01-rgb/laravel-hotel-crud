@@ -7,9 +7,11 @@
           @foreach ($employee as $employee)
             <li>
               <h3>
-                [{{ $employee -> id }}]
-                {{ $employee -> firstname }}
-                {{ $employee -> lastname }}
+                <a href="{{ route('employee', $employee -> id) }}">   
+                  [{{ $employee -> id }}]
+                  {{ $employee -> firstname }}
+                  {{ $employee -> lastname }}
+                </a>
               </h3>
             </li>
           @endforeach
