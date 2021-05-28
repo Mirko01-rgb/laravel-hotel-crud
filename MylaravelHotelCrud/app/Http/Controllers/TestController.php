@@ -30,10 +30,10 @@ class TestController extends Controller
     //dd($request -> all());
 
     $validate = $request -> validate([
-      'firstname' => 'nullable|max:128',
-      'lastname' => 'nullable|max:128',
-      'role' => 'nullable|max:16',
-      'ral' => 'nullable|max:16',
+      'firstname' => 'required|max:128',
+      'lastname' => 'required|max:128',
+      'role' => 'required|max:16',
+      'ral' => 'required|max:16',
     ]);
 
     $employee = Employee::create($validate);
@@ -52,10 +52,10 @@ class TestController extends Controller
   public function update(Request $request, $id) {
     //dd($request -> all() ,  $id);
     $validate = $request -> validate([
-      'firstname' => 'nullable|max:128',
-      'lastname' => 'nullable|max:128',
-      'role' => 'nullable|max:16',
-      'ral' => 'nullable|max:16',
+      'firstname' => 'required|max:128',
+      'lastname' => 'required|max:128',
+      'role' => 'required|max:16',
+      'ral' => 'required|max:16',
     ]);
     //dd($validate, $id);
     $employee = Employee::findOrFail($id);
